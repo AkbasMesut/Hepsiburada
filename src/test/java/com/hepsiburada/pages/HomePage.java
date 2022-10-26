@@ -1,13 +1,15 @@
 package com.hepsiburada.pages;
 
 import com.hepsiburada.utilities.Driver;
+import dev.failsafe.internal.util.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
+
 
 import javax.swing.*;
 
@@ -43,15 +45,15 @@ public class HomePage extends BasePage  {
     }
 
     public void userLogin(){
-        mailPlaceHolder.sendKeys("makbas006@gmail.com", Keys.ENTER);
-        passwordPlaceHolder.sendKeys("Kartal.1998",Keys.ENTER);
+        mailPlaceHolder.sendKeys("mutluate135@gmail.com", Keys.ENTER);
+        passwordPlaceHolder.sendKeys("Kartal.9898",Keys.ENTER);
     }
 
     public void userLoginAssert(){
-        String expectedAccount = "mesut akbaş";
+        String expectedAccount = "mutlu ates";
         String actualAccount = userAccount.getText();
         System.out.println("Actual account name = " + actualAccount);
-        Assert.assertEquals(expectedAccount,actualAccount);
+        Assertions.assertEquals(expectedAccount,actualAccount);
     }
 
     public void productSearch(String product){

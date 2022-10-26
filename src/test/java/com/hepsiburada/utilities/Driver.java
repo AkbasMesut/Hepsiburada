@@ -31,7 +31,7 @@ public class Driver {
             switch (browserType) {
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--incognito");
+                   // options.addArguments("--incognito");
                     options.addArguments("--start-maximized");
                     options.addArguments("--ignore-certificate-errors");
                     options.addArguments("--allow-insecure-localhost");

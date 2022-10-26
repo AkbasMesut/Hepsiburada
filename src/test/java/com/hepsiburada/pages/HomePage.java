@@ -45,7 +45,7 @@ public class HomePage extends BasePage  {
     }
 
     public void userLogin(){
-        mailPlaceHolder.sendKeys("mutluate135@gmail.com", Keys.ENTER);
+        mailPlaceHolder.sendKeys("mutluates135@gmail.com", Keys.ENTER);
         passwordPlaceHolder.sendKeys("Kartal.9898",Keys.ENTER);
     }
 

@@ -1,4 +1,4 @@
-package com.hepsiburada.tests;
+package com.hepsiburada.utilities;
 
 import com.hepsiburada.pages.Log;
 import org.junit.jupiter.api.extension.ExtensionContext;

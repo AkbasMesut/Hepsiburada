@@ -1,6 +1,7 @@
 package com.hepsiburada.tests;
 
 import com.hepsiburada.utilities.Driver;
+import com.hepsiburada.utilities.TestLogger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -17,8 +18,9 @@ public class BaseTest {
 
     @AfterAll
     public void tearDown() throws InterruptedException {
-        Thread.sleep(3);
-       // Driver.closeDriver();
+        if (null != Driver.getDriver()) {
+            Driver.getDriver().quit();
+        }
     }
 
 }

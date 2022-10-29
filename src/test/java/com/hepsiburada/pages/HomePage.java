@@ -21,7 +21,10 @@ public class HomePage extends BasePage  {
     @FindBy(id = "login")
     public WebElement login;
 
-    @FindBy(id = "onetrust-accept-btn-handler")
+    @FindBy(xpath = "//a[text()='Çıkış Yap']")
+    public WebElement logout;
+
+    @FindBy(xpath = "//button[text()='Kabul Et']")
     public WebElement cookies;
 
     @FindBy(name = "username")
@@ -77,6 +80,11 @@ public class HomePage extends BasePage  {
 
     public WebElement productSelect(int num){
         WebElement selectedProduct = Driver.getDriver().findElement(By.xpath("(//h3[@data-test-id='product-card-name'])["+num+"]"));
+        return selectedProduct;
+    }
+
+    public WebElement productSelect(String name){
+        WebElement selectedProduct = Driver.getDriver().findElement(By.xpath("(//h3[contains(text(),'"+name+"')])[1]"));
         return selectedProduct;
     }
 

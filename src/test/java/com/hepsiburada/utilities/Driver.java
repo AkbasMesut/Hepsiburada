@@ -15,14 +15,14 @@ public class Driver {
     private Driver() {
     }
 
-    private static WebDriver driver;
+    //private static WebDriver driver;
 
-    //  private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
 
     public static WebDriver getDriver() {
 
-        if (driver == null) {
+        if (driverPool.get() == null) {
 
             // We read our browserType from configuration.properties.
             // this way, we can control which browser is opened from outside our code, from configuration.properties
@@ -30,19 +30,20 @@ public class Driver {
 
             switch (browserType) {
                 case "chrome":
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
-                   // options.addArguments("--incognito");
+                    options.addArguments("--incognito");
                     options.addArguments("--start-maximized");
                     options.addArguments("--ignore-certificate-errors");
                     options.addArguments("--allow-insecure-localhost");
                     options.addArguments("--acceptInsecureCerts");
                     options.addArguments("--disable-blink-features=AutomationControlled");
                     options.addArguments("--disable-extensions");
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver(options);
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    driverPool.set(new ChromeDriver(options));
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
                     FirefoxOptions option = new FirefoxOptions();
                     option.addArguments("--incognito");
                     option.addArguments("--start-maximized");
@@ -51,20 +52,21 @@ public class Driver {
                     option.addArguments("--acceptInsecureCerts");
                     option.addArguments("--disable-blink-features=AutomationControlled");
                     option.addArguments("--disable-extensions");
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver(option);
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    driverPool.set(new FirefoxDriver(option));
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
             }
         }
-        return driver;
+        return driverPool.get();
     }
 
+
     public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
+        if (driverPool.get() != null) {
+            driverPool.get().quit();
+            driverPool.remove();
         }
+        System.out.println( driverPool.get() == null);
     }
 
 }

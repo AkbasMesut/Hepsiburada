@@ -1,5 +1,9 @@
 #  Hepsiburada final case 
-   This is a selenium project includes two scenarios which implemented with POM design pattern. 
+   This is a selenium project includes two scenarios which implemented with POM design pattern. Tools : 
+   - Selenium (4.5.3)
+   - Junit  (5.9.1)
+   - log4j (1.2.17)
+   
 ## Test Steps
 - go to www.hepsiburada.com site
 - sign in your account
@@ -12,7 +16,7 @@
 - repeat the same steps without sign in
 
 ## Project's main packages
-![image](project2.jpg)
+![image](project2.jpg)  abc
 
 
 

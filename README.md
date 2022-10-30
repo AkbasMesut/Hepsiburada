@@ -14,7 +14,7 @@
 - put two products from different merchants to the basket
 - assert the products are in the basket
 - close the windows
-- repeat the same steps without sign in
+- repeat all same steps without sign in
 
 ## Project's main packages
 ![image](project2.jpg)  

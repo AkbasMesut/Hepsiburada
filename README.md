@@ -17,7 +17,7 @@
 - repeat the same steps without sign in
 
 ## Project's main packages
-![image](project2.jpg)  abc
+![image](project2.jpg)  
 
 
 

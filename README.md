@@ -1,5 +1,4 @@
-# Project definition :
-## Tools 
-Selenium (4.5.3)
-Junit (5.9.1)
-Log4j (1.2.17)
+#  Hepsiburada final case 
+   This is a selenium project includes two scenarios which implemented with POM design pattern. 
+#  To   
+

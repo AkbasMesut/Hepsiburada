@@ -5,7 +5,9 @@
 - sign in your account
 - search any product
 - select a product from the list
-- list available merhcands of the product
+- list the product's merhcands
 - put two products from different merchants to the basket
 - assert the products are in the basket
+- close the windows
+- repeat the same steps without sign in 
 

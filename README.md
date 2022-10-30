@@ -11,7 +11,7 @@
 - close the windows
 - repeat the same steps without sign in
 
-## Project's Main Pages
+## Project's main packages
 ![image](project2.jpg)
 
 

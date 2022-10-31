@@ -1,4 +1,4 @@
-#  Hepsiburada final case 
+#  Hepsiburada for Patika.dev final case 
    This is a selenium project includes two scenarios which implemented with POM design pattern.
   
   ### Tools : 

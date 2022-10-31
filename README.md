@@ -21,7 +21,7 @@
 - repeat all same steps without sign in
 
 ## Project's main packages
-![image](project2.jpg)  
+![image](project1.jpg)  
 
 
 

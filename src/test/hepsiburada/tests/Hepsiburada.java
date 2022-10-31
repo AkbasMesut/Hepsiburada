@@ -17,7 +17,7 @@ public class Hepsiburada extends BaseTest {
     HomePage homePage = new HomePage();
     ProductPage productPage = new ProductPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-    String firstProduct = "koşu bandı";
+    String firstProduct = "kosu bandı";
     String firstProductBrand = "Hattrick";
     String secondProduct = "Kondisyon bisikleti";
     String secondProductBrand = "Dynamic";
@@ -55,7 +55,7 @@ public class Hepsiburada extends BaseTest {
     @Test()
     @Order(5)
     public void kullanıcı_secili_ürünün_satıcılarını_listeler() throws InterruptedException {
-        homePage.switchToWindow(firstProduct);
+        homePage.switchToWindow(firstProductBrand);
         productPage.scrollToElement(productPage.allSellerList);
         productPage.allSellerList.click();
     }

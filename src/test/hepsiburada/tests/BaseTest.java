@@ -20,8 +20,7 @@ public class BaseTest {
 
     @AfterAll
     public void teardown() {
-          //  Driver.getDriver().quit();
-
+           Driver.getDriver().quit();
     }
 
 

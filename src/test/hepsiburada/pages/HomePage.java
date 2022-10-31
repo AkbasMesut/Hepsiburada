@@ -1,17 +1,12 @@
-package com.hepsiburada.pages;
+package pages;
 
-import com.hepsiburada.utilities.Driver;
-import dev.failsafe.internal.util.Assert;
+import utilities.Driver;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-
-
-import javax.swing.*;
 
 public class HomePage extends BasePage  {
 

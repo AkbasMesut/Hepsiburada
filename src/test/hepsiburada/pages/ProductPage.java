@@ -1,6 +1,6 @@
-package com.hepsiburada.pages;
+package pages;
 
-import com.hepsiburada.utilities.Driver;
+import utilities.Driver;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;

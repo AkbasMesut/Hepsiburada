@@ -1,6 +1,6 @@
-package com.hepsiburada.utilities;
+package utilities;
 
-import com.hepsiburada.pages.Log;
+import pages.Log;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 

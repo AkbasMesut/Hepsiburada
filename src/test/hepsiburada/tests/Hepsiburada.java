@@ -1,10 +1,9 @@
-package com.hepsiburada.tests;
+package tests;
 
-import com.hepsiburada.pages.HomePage;
-import com.hepsiburada.pages.ProductPage;
-import com.hepsiburada.utilities.Driver;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import jdk.jfr.Description;
+import pages.HomePage;
+import pages.ProductPage;
+import utilities.ConfigurationReader;
+import utilities.Driver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -18,6 +17,10 @@ public class Hepsiburada extends BaseTest {
     HomePage homePage = new HomePage();
     ProductPage productPage = new ProductPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+    String firstProduct = "koşu bandı";
+    String firstProductBrand = "Hattrick";
+    String secondProduct = "Kondisyon bisikleti";
+    String secondProductBrand = "Dynamic";
 
     @Test
     @Order(1)
@@ -40,19 +43,19 @@ public class Hepsiburada extends BaseTest {
     @Test()
     @Order(3)
     public void kullanıcı_satın_almak_istediği_ürün_için_arama_yapar() {
-        homePage.productSearch("Koşu Bandı");
+        homePage.productSearch(firstProduct);
     }
 
     @Test()
     @Order(4)
     public void kullanıcı_arama_sonucunda_ekrana_gelen_ürün_listesinden_bir_ürünü_secer() {
-        homePage.productSelect("Hattrick").click();
+        homePage.productSelect(firstProductBrand).click();
     }
 
     @Test()
     @Order(5)
     public void kullanıcı_secili_ürünün_satıcılarını_listeler() throws InterruptedException {
-        homePage.switchToWindow("kosu bandi");
+        homePage.switchToWindow(firstProduct);
         productPage.scrollToElement(productPage.allSellerList);
         productPage.allSellerList.click();
     }
@@ -85,6 +88,12 @@ public class Hepsiburada extends BaseTest {
         Assertions.assertEquals("Mutfak Dünyası", productPage.secondMerchantInBasket.getText());
         Assertions.assertEquals(expectedProduct, productPage.firstProductInBasket.getText());
         Assertions.assertEquals(expectedProduct, productPage.secondProductInBasket.getText());
+
+    }
+
+    @Test
+    @Order(8)
+    public void kullanıcı_sepete_eklenen_ürünleri_silip_pencereleri_kapatır(){
         productPage.erase.click();
         productPage = new ProductPage();
         try {
@@ -97,8 +106,8 @@ public class Hepsiburada extends BaseTest {
     }
 
     @Test
-    @Order(8)
-    public void ikinci_kullanıcı_hepsiburada_sitesine_gider_ve_cerezleri_kabul_eder() {
+    @Order(9)
+    public void kullanıcı_tekrar_hepsiburada_sitesine_gider_ve_cerezleri_kabul_eder() {
         Driver.getDriver().get("https://www.hepsiburada.com/");
         homePage = new HomePage();
         homePage.acceptCookies();
@@ -108,29 +117,29 @@ public class Hepsiburada extends BaseTest {
     }
 
     @Test()
-    @Order(9)
-    public void ikinci_kullanıcı_satın_almak_istediği_ürün_için_arama_yapar() {
-        homePage.productSearch("Kondisyon bisikleti");
-    }
-
-    @Test()
     @Order(10)
-    public void ikinci_kullanıcı_arama_sonucunda_ekrana_gelen_ürün_listesinden_bir_ürün_secer() {
-        homePage.productSelect("Dynamic").click();
+    public void kullanıcı_tekrar_satın_almak_istediği_ürün_için_arama_yapar() {
+        homePage.productSearch(secondProduct);
     }
 
     @Test()
     @Order(11)
-    public void ikinci_kullanıcı_secili_ürünün_satıcılarını_listeler() throws InterruptedException {
-        homePage.switchToWindow("Dynamic");
+    public void kullanıcı_tekrar_arama_sonucunda_ekrana_gelen_ürün_listesinden_bir_ürün_secer() {
+        homePage.productSelect(secondProductBrand).click();
+    }
+
+    @Test()
+    @Order(12)
+    public void kullanıcı_tekrar_secili_ürünün_satıcılarını_listeler() throws InterruptedException {
+        homePage.switchToWindow(secondProductBrand);
         productPage = new ProductPage();
         productPage.scrollToElement(productPage.allSellerList);
         productPage.allSellerList.click();
     }
 
     @Test()
-    @Order(12)
-    public void ikinci_kullanıcı_listedeki_iki_farklı_satıcıdan_ürünü_sepete_ekler() throws InterruptedException {
+    @Order(13)
+    public void kullanıcı_tekrar_listedeki_iki_farklı_satıcıdan_ürünü_sepete_ekler() throws InterruptedException {
         try {
             productPage.firstBasket.click();
             String firstMerchant = productPage.firstMerchant.getText();
@@ -149,8 +158,8 @@ public class Hepsiburada extends BaseTest {
     }
 
     @Test()
-    @Order(13)
-    public void ikinci_kullanıcı_seçilen_ürünlerin_sepete_eklendiğini_doğrular() throws InterruptedException {
+    @Order(14)
+    public void kullanıcı_tekrar_seçilen_ürünlerin_sepete_eklendiğini_doğrular() throws InterruptedException {
         String expectedProduct = "Dynamic R102N Eliptik Bisiklet Orbitroller Orbitrack";
         Assertions.assertEquals("Seçkinpazarlama", productPage.firstMerchantInBasket.getText());
         Assertions.assertEquals("Hepsiburada", productPage.secondMerchantInBasket.getText());

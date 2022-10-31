@@ -1,13 +1,13 @@
-2022-10-29 21:03:01,263 INFO  [Log] kullanıcı_hepsiburada_sitesine_gider_ve_cerezleri_kabul_eder() PASSED 
-2022-10-29 21:03:10,432 INFO  [Log] kullanıcı_hesabına_giriş_yapar_ve_hesabının_açık_olduğunu_doğrular() PASSED 
-2022-10-29 21:03:10,904 INFO  [Log] kullanıcı_satın_almak_istediği_ürün_için_arama_yapar() PASSED 
-2022-10-29 21:03:14,817 INFO  [Log] kullanıcı_arama_sonucunda_ekrana_gelen_ürün_listesinden_bir_ürünü_secer() PASSED 
-2022-10-29 21:03:19,208 INFO  [Log] kullanıcı_secili_ürünün_satıcılarını_listeler() PASSED 
-2022-10-29 21:03:26,199 INFO  [Log] kullanıcı_listedeki_iki_farklı_satıcıdan_ürünü_sepete_ekler() PASSED 
-2022-10-29 21:03:29,437 INFO  [Log] kullanıcı_seçilen_ürünlerin_sepete_eklendiğini_doğrular() PASSED 
-2022-10-29 21:03:35,380 INFO  [Log] ikinci_kullanıcı_hepsiburada_sitesine_gider_ve_cerezleri_kabul_eder() PASSED 
-2022-10-29 21:03:40,422 INFO  [Log] ikinci_kullanıcı_satın_almak_istediği_ürün_için_arama_yapar() PASSED 
-2022-10-29 21:03:40,957 INFO  [Log] ikinci_kullanıcı_arama_sonucunda_ekrana_gelen_ürün_listesinden_bir_ürün_secer() PASSED 
-2022-10-29 21:03:44,601 INFO  [Log] ikinci_kullanıcı_secili_ürünün_satıcılarını_listeler() PASSED 
-2022-10-29 21:03:50,626 INFO  [Log] ikinci_kullanıcı_listedeki_iki_farklı_satıcıdan_ürünü_sepete_ekler() PASSED 
-2022-10-29 21:03:51,157 ERROR [Log] ikinci_kullanıcı_seçilen_ürünlerin_sepete_eklendiğini_doğrular() FAILED with cause : expected: <seçkinpazarlama> but was: <Seçkinpazarlama> 
+2022-10-30 09:28:15,319 INFO  [Log] kullanıcı_hepsiburada_sitesine_gider_ve_cerezleri_kabul_eder() PASSED 
+2022-10-30 09:28:25,091 INFO  [Log] kullanıcı_hesabına_giriş_yapar_ve_hesabının_açık_olduğunu_doğrular() PASSED 
+2022-10-30 09:28:25,512 INFO  [Log] kullanıcı_satın_almak_istediği_ürün_için_arama_yapar() PASSED 
+2022-10-30 09:28:29,233 INFO  [Log] kullanıcı_arama_sonucunda_ekrana_gelen_ürün_listesinden_bir_ürünü_secer() PASSED 
+2022-10-30 09:28:32,856 INFO  [Log] kullanıcı_secili_ürünün_satıcılarını_listeler() PASSED 
+2022-10-30 09:28:41,219 INFO  [Log] kullanıcı_listedeki_iki_farklı_satıcıdan_ürünü_sepete_ekler() PASSED 
+2022-10-30 09:28:44,110 INFO  [Log] kullanıcı_seçilen_ürünlerin_sepete_eklendiğini_doğrular() PASSED 
+2022-10-30 09:28:49,644 INFO  [Log] ikinci_kullanıcı_hepsiburada_sitesine_gider_ve_cerezleri_kabul_eder() PASSED 
+2022-10-30 09:28:50,527 INFO  [Log] ikinci_kullanıcı_satın_almak_istediği_ürün_için_arama_yapar() PASSED 
+2022-10-30 09:28:54,004 INFO  [Log] ikinci_kullanıcı_arama_sonucunda_ekrana_gelen_ürün_listesinden_bir_ürün_secer() PASSED 
+2022-10-30 09:28:57,504 INFO  [Log] ikinci_kullanıcı_secili_ürünün_satıcılarını_listeler() PASSED 
+2022-10-30 09:29:05,553 INFO  [Log] ikinci_kullanıcı_listedeki_iki_farklı_satıcıdan_ürünü_sepete_ekler() PASSED 
+2022-10-30 09:29:06,334 INFO  [Log] ikinci_kullanıcı_seçilen_ürünlerin_sepete_eklendiğini_doğrular() PASSED 

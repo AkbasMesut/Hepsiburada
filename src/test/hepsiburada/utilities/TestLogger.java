@@ -1,6 +1,5 @@
 package utilities;
 
-import pages.Log;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 

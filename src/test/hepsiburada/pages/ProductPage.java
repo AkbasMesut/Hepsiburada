@@ -18,7 +18,7 @@ public class ProductPage extends HomePage{
     @FindBy(xpath = "(//button[@class='add-to-basket button'])[2]")
     public WebElement secondBasket;
 
-    @FindBy(xpath = "//a[@class='checkoutui-Modal-2iZXl']")
+    @FindBy(xpath = "//a[@class='checkoutui-Modal-iHhyy79iR28NvF33vKJb']")
     public WebElement notificationClose;
 
     @FindBy(xpath = "//*[text()='Sepete git']")

@@ -26,8 +26,9 @@ public class Hepsiburada extends BaseTest {
     @Order(1)
     public void kullanıcı_hepsiburada_sitesine_gider_ve_cerezleri_kabul_eder() {
         String actualTitle = Driver.getDriver().getTitle();
-        String expectedTitle = "Türkiye'nin En Büyük Online Alışveriş Sitesi Hepsiburada.com";
-        Assertions.assertEquals(expectedTitle,actualTitle);
+        System.out.println(actualTitle);
+        String expectedTitle = "Hepsiburada";
+        Assertions.assertTrue(actualTitle.contains(expectedTitle));
         homePage.acceptCookies();
     }
 

@@ -1,6 +1,6 @@
-package pages;
+package com.hepsiburada.pages;
 
-import utilities.Driver;
+import com.hepsiburada.utilities.*;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {

@@ -1,6 +1,7 @@
-package pages;
+package com.hepsiburada.pages;
 
-import utilities.Driver;
+import com.hepsiburada.pages.*;
+import com.hepsiburada.utilities.*;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

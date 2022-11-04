@@ -1,4 +1,4 @@
-package utilities;
+package com.hepsiburada.utilities;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;

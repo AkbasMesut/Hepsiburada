@@ -1,15 +1,15 @@
-package tests;
+package com.hepsiburada.tests;
 
-import pages.HomePage;
-import pages.ProductPage;
-import utilities.ConfigurationReader;
-import utilities.Driver;
+import com.hepsiburada.pages.*;
+import com.hepsiburada.utilities.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.*;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 
@@ -27,7 +27,7 @@ public class Hepsiburada extends BaseTest {
     public void kullanıcı_hepsiburada_sitesine_gider_ve_cerezleri_kabul_eder() {
         String actualTitle = Driver.getDriver().getTitle();
         String expectedTitle = "Türkiye'nin En Büyük Online Alışveriş Sitesi Hepsiburada.com";
-        Assertions.assertEquals(expectedTitle, actualTitle);
+        Assertions.assertEquals(expectedTitle,actualTitle);
         homePage.acceptCookies();
     }
 

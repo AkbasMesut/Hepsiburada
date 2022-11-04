@@ -1,7 +1,7 @@
-package tests;
+package com.hepsiburada.tests;
 
-import utilities.Driver;
-import utilities.TestLogger;
+import com.hepsiburada.utilities.Driver;
+import com.hepsiburada.utilities.TestLogger;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;

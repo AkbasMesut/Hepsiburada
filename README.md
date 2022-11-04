@@ -20,7 +20,7 @@
 - close the windows
 - repeat all same steps without sign in
 
-## Project's main packages and log.
+## Main packages and Log.
 ![image](project1.jpg)  
 
 

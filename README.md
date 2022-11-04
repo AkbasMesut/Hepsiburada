@@ -18,7 +18,7 @@
 - repeat all same steps without sign in
 
 ## Main packages and Log.
-![image](log.jpg)  
+![image](Log.jpg)  
 
 
 

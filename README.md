@@ -12,7 +12,7 @@
 - search any product
 - select a product from the list
 - list the product's merhcands
-- put two products from different merchants to the basket
+- put the product from two different merchants to the basket
 - assert the products are in the basket
 - close the windows
 - repeat all same steps without sign in

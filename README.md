@@ -17,7 +17,7 @@
 - close the windows
 - repeat all same steps without sign in
 
-## Main packages and Log.
+## Main structure and Log result.
 ![image](Log.jpg)  
 
 

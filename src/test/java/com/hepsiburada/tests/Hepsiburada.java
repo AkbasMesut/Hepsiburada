@@ -28,7 +28,7 @@ public class Hepsiburada extends BaseTest {
         String actualTitle = Driver.getDriver().getTitle();
         System.out.println(actualTitle);
         String expectedTitle = "Hepsiburada";
-        Assertions.assertTrue(actualTitle.contains(expectedTitle));
+        Assertions.assertTrue(actualTitle.contains(expectedTitle));  // assertion  for the website is true or not
         homePage.acceptCookies();
     }
 
@@ -85,10 +85,11 @@ public class Hepsiburada extends BaseTest {
     @Order(7)
     public void kullanıcı_seçilen_ürünlerin_sepete_eklendiğini_doğrular() throws InterruptedException {
         String expectedProduct = "Hattrick Smart Energy Yeni Nesil Koşu Bandı 2.25 Hp";
-        Assertions.assertEquals("Spor Dünyası", productPage.firstMerchantInBasket.getText());
-        Assertions.assertEquals("Mutfak Dünyası", productPage.secondMerchantInBasket.getText());
-        Assertions.assertEquals(expectedProduct, productPage.firstProductInBasket.getText());
-        Assertions.assertEquals(expectedProduct, productPage.secondProductInBasket.getText());
+
+        productPage.assertMerchant("Spor Dünyası");    // first product merchant assertion
+        productPage.assertFirstProduct(expectedProduct);     // first product in basket aseertion
+        productPage.assertMerchant("Mutfak Dünyası");  // second product mercant assertion
+        productPage.assertSecontProduct(expectedProduct);    // second product in basket assertion
 
     }
 
@@ -114,7 +115,8 @@ public class Hepsiburada extends BaseTest {
         homePage.acceptCookies();
         String actualTitle = Driver.getDriver().getTitle();
         String expectedTitle = "Türkiye'nin En Büyük Online Alışveriş Sitesi Hepsiburada.com";
-        Assertions.assertEquals(expectedTitle, actualTitle);
+
+        Assertions.assertEquals(expectedTitle, actualTitle);   // assertion  for the website is true or not
     }
 
     @Test()
@@ -161,11 +163,14 @@ public class Hepsiburada extends BaseTest {
     @Test()
     @Order(14)
     public void kullanıcı_tekrar_seçilen_ürünlerin_sepete_eklendiğini_doğrular() throws InterruptedException {
+
         String expectedProduct = "Dynamic R102N Eliptik Bisiklet Orbitroller Orbitrack";
-        Assertions.assertEquals("Seçkinpazarlama", productPage.firstMerchantInBasket.getText());
-        Assertions.assertEquals("Hepsiburada", productPage.secondMerchantInBasket.getText());
-        Assertions.assertEquals(expectedProduct, productPage.firstProductInBasket.getText());
-        Assertions.assertEquals(expectedProduct, productPage.secondProductInBasket.getText());
+
+        productPage.assertMerchant("Seçkinpazarlama");    // first product merchant assertion
+        productPage.assertFirstProduct(expectedProduct);        // first product in basket aseertion
+        productPage.assertMerchant("Hepsiburada");        // second product mercant assertion
+        productPage.assertSecontProduct(expectedProduct);       // second product in basket assertion
+
 
     }
 }

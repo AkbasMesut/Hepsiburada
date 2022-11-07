@@ -6,6 +6,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+
+import java.util.List;
 
 public class ProductPage extends HomePage{
 
@@ -18,7 +21,7 @@ public class ProductPage extends HomePage{
     @FindBy(xpath = "(//button[@class='add-to-basket button'])[2]")
     public WebElement secondBasket;
 
-    @FindBy(xpath = "//a[contains(@class,'checkoutui-Modal')]")  //a[@class='checkoutui-Modal-iHhyy79iR28NvF33vKJb']
+    @FindBy(xpath = "//a[contains(@class,'checkoutui-Modal')]")
     public WebElement notificationClose;
 
     @FindBy(xpath = "//*[text()='Sepete git']")
@@ -36,11 +39,8 @@ public class ProductPage extends HomePage{
     @FindBy(xpath = "(//span[@data-bind='text: merchantName'])[2]")
     public WebElement secondMerchant;
 
-    @FindBy(xpath = "(//span[@class='merchantLink_2Ii8s']/a)[1]")
-    public WebElement firstMerchantInBasket;
-
-    @FindBy(xpath = "(//span[@class='merchantLink_2Ii8s']/a)[2]")
-    public WebElement secondMerchantInBasket;
+    @FindBy(xpath = "//span[@class='merchantLink_2Ii8s']/a")
+    public List<WebElement> allMerchantsInBasket;
 
     @FindBy(xpath = "(//div[@class='product_name_3Lh3t']/a)[1]")
     public WebElement firstProductInBasket;
@@ -54,9 +54,26 @@ public class ProductPage extends HomePage{
     @FindBy(xpath = "//a[@class='delete_product_3DFC0']")
     public WebElement eraseButton;
 
-    public boolean assertMerchant(WebElement element,String name){
-       Assertions.assertEquals(element.getText(),name);
-        return assertMerchant(element, name);
+
+
+    public boolean assertMerchant(String name){
+        boolean merchantInBasket = false;
+        for (WebElement merchant : allMerchantsInBasket) {
+            if (merchant.getText().equalsIgnoreCase(name)){
+                merchantInBasket = true;
+            }else {
+                merchantInBasket = false;
+            }
+        }
+      return   merchantInBasket;
+    }
+
+    public void assertFirstProduct(String name){
+         Assertions.assertTrue(firstProduct.getText().equalsIgnoreCase(name));
+    }
+
+    public void assertSecontProduct(String name){
+        Assertions.assertTrue(secondProduct.getText().equalsIgnoreCase(name));
     }
 
     public void scrollDown(){

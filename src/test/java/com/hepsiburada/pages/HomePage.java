@@ -70,10 +70,6 @@ public class HomePage extends BasePage  {
         }
     }
 
-    public void scrollToElement(WebElement element) {
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-    }
-
     public WebElement productSelect(int num){
         WebElement selectedProduct = Driver.getDriver().findElement(By.xpath("(//h3[@data-test-id='product-card-name'])["+num+"]"));
         return selectedProduct;

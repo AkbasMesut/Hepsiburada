@@ -2,6 +2,7 @@ package com.hepsiburada.pages;
 
 import com.hepsiburada.utilities.*;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,7 +11,7 @@ import org.openqa.selenium.support.FindBys;
 
 import java.util.List;
 
-public class ProductPage extends HomePage{
+public class ProductPage extends BasePage{
 
     @FindBy(id = "merchantTabTrigger")
     public WebElement allSellerList;
@@ -79,6 +80,10 @@ public class ProductPage extends HomePage{
     public void scrollDown(){
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN,Keys.PAGE_DOWN).perform();
+    }
+
+    public void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
 

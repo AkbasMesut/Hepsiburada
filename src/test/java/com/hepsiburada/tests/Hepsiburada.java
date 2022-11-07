@@ -14,13 +14,7 @@ import java.time.Duration;
 
 
 public class Hepsiburada extends BaseTest {
-    HomePage homePage = new HomePage();
-    ProductPage productPage = new ProductPage();
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-    String firstProduct = "kosu bandı";
-    String firstProductBrand = "Hattrick";
-    String secondProduct = "Kondisyon bisikleti";
-    String secondProductBrand = "Dynamic";
+
 
     @Test
     @Order(1)
@@ -38,7 +32,7 @@ public class Hepsiburada extends BaseTest {
         homePage.loginFirst.click();
         homePage.login.click();
         homePage.userLogin();
-        homePage.userLoginAssert();
+        homePage.userLoginAssert();   // assertion for user account page is true or not
     }
 
     @Test()
